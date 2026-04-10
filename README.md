@@ -9,16 +9,16 @@ Last update: April 10, 2026
 bioRxiv [link](https://www.biorxiv.org/content/10.64898/2026.03.27.714817v1.abstract)
 
 Bayesian analyses in R (`brms`) for postnatal Zika-related neuroimaging and neurobehavioral outcomes, using informative priors from prior literature where noted.
-This repository contains **R scripts** for **Bayesian models** fit with **`brms`** (Stan) on experimental data comparing **control and Zika** conditions (with **sex** and, where relevant, other factors). Analyses use **study-specific priors** synthesized from control-like or prior-study summaries when those inputs are provided.
+This repository contains **R scripts** for **Bayesian models** fit with **`brms`** (Stan) on experimental data comparing **control and Zika** conditions (with sex and, where relevant, other factors). Analyses use **study-specific priors** synthesized from control-like or prior-study summaries when those inputs are provided.
 | Script | Focus |
 |--------|--------|
 | `neuroimaging_assessment.R` | Brain MRI outcomes (ZIKV cohort); optional volume adjustment (e.g. ICV/TBV); priors from `prior.csv`. |
-| `neurobehavioral_assessment.R` | **SNIP**-style ordinal outcomes; two-part workflow (model fitting, then contrasts/plots). |
-| `acute_stress_assessment.R` | **Human intruder** / acute stress–related behaviors; weighted priors from `HI_prior.xlsx` plus `human_intruder.csv`. |
-| `attachment_assessment.R` | **Attachment**-related behaviors (counts/durations); behavior-specific priors. |
-| `visual_acuity.R` | **Visual acuity** (beta regression with hierarchical structure). |
+| `neurobehavioral_assessment.R` |  Infant Neurobehavioral Assessment Scale (INAS)-style ordinal outcomes; two-part workflow (model fitting, then contrasts/plots). |
+| `acute_stress_assessment.R` | Acute stress–related behaviors; weighted priors from `HI_prior.xlsx` plus `human_intruder.csv`. |
+| `attachment_assessment.R` | Attachment-related behaviors (counts/durations); behavior-specific priors. |
+| `visual_acuity.R` | Visual acuity (beta regression with hierarchical structure). |
 ## Requirements
 - R and a working **Stan** toolchain for `brms`
-- Packages each script loads (e.g. `tidyverse`, `readr`, `emmeans`, `tidybayes`; `readxl` for the human-intruder workflow)
+- Packages each script loads (e.g. `tidyverse`, `readr`, `emmeans`, `tidybayes`). Install missing packages with `install.packages("package-name")`.
 Place the expected **CSV** files (and `HI_prior.xlsx` where needed) in the working directory before running.
 **Note:** Model fitting can be slow; some scripts are split so you can save/load fitted objects between sessions.
