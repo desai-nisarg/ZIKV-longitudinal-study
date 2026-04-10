@@ -20,5 +20,6 @@ This repository contains **R scripts** for **Bayesian models** fit with **`brms`
 ## Requirements
 - R and a working **Stan** toolchain for `brms`
 - Packages each script loads (e.g. `tidyverse`, `readr`, `emmeans`, `tidybayes`). Install missing packages with `install.packages("package-name")`.
+
 Place the expected **CSV** files (and `HI_prior.xlsx` where needed) in the working directory before running.
 **Note:** Model fitting can be slow; some scripts are split so you can save/load fitted objects between sessions.
